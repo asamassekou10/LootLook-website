@@ -43,7 +43,11 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: 'spring', stiffness: 100, damping: 15 },
+    transition: { 
+      type: 'spring' as const, 
+      stiffness: 100, 
+      damping: 15 
+    } as const,
   },
 };
 
@@ -64,7 +68,7 @@ const phoneEmergeVariants = {
     y: 0, 
     opacity: 1,
     scale: 1,
-    transition: { duration: 1.0, delay: 0.5, type: "spring", bounce: 0.5 }
+    transition: { duration: 1.0, delay: 0.5, type: "spring" as const, bounce: 0.5 }
   }
 };
 
@@ -81,7 +85,7 @@ const resultCardVariants = {
   visible: { 
     y: 0, 
     opacity: 1,
-    transition: { delay: 1.5, type: "spring", damping: 12 }
+    transition: { delay: 1.5, type: "spring" as const, damping: 12 }
   }
 };
 
@@ -98,7 +102,7 @@ const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; dela
     initial={{ opacity: 0, y: 50, scale: 0.95 }}
     whileInView={{ opacity: 1, y: 0, scale: 1 }}
     viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, delay, type: "spring", bounce: 0.3 }}
+    transition={{ duration: 0.8, delay, type: "spring" as const, bounce: 0.3 }}
   >
     {children}
   </motion.div>
@@ -132,14 +136,14 @@ export default function LandingPage() {
                 {/* Logo */}
                 <div className="flex-shrink-0 flex items-center gap-2.5 cursor-pointer group">
                   <div className="relative w-8 h-8 transform group-hover:scale-110 transition-transform duration-300">
-                    <Image 
+        <Image
                       src="/icon.png" 
                       alt="LootLook Logo" 
                       width={32} 
                       height={32}
                       className="object-contain"
-                      priority
-                    />
+          priority
+        />
                   </div>
                   <span className="font-bold text-xl tracking-tight text-white relative">
                     LootLook
