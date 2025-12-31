@@ -57,7 +57,7 @@ const lightBurstVariants = {
   open: { 
     opacity: [0, 1, 0.8], 
     scale: [0.5, 1.5, 1.2],
-    transition: { duration: 2, delay: 0.5, ease: "easeOut" }
+    transition: { duration: 2, delay: 0.5, ease: "easeOut" as const } as const
   }
 };
 
@@ -68,7 +68,7 @@ const phoneEmergeVariants = {
     y: 0, 
     opacity: 1,
     scale: 1,
-    transition: { duration: 1.0, delay: 0.5, type: "spring" as const, bounce: 0.5 }
+    transition: { duration: 1.0, delay: 0.5, type: "spring" as const, bounce: 0.5 } as const
   }
 };
 
@@ -76,7 +76,7 @@ const phoneEmergeVariants = {
 const scanLineVariants = {
   scanning: {
     top: ["0%", "100%", "0%"],
-    transition: { duration: 3, repeat: Infinity, ease: "linear" }
+    transition: { duration: 3, repeat: Infinity, ease: "linear" as const } as const
   }
 };
 
@@ -85,7 +85,7 @@ const resultCardVariants = {
   visible: { 
     y: 0, 
     opacity: 1,
-    transition: { delay: 1.5, type: "spring" as const, damping: 12 }
+    transition: { delay: 1.5, type: "spring" as const, damping: 12 } as const
   }
 };
 
@@ -93,7 +93,7 @@ const resultCardVariants = {
 const floatingAnimation = {
   y: [-10, 5, -10], 
   rotate: [0, 1, 0, -1, 0],
-  transition: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
+  transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const, delay: 1.5 } as const
 };
 
 // Reusable Component for Scroll-into-view animations
@@ -102,7 +102,7 @@ const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; dela
     initial={{ opacity: 0, y: 50, scale: 0.95 }}
     whileInView={{ opacity: 1, y: 0, scale: 1 }}
     viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, delay, type: "spring" as const, bounce: 0.3 }}
+    transition={{ duration: 0.8, delay, type: "spring" as const, bounce: 0.3 } as const}
   >
     {children}
   </motion.div>
@@ -121,7 +121,7 @@ export default function LandingPage() {
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        transition={{ type: "spring" as const, stiffness: 100, damping: 20 } as const}
         className="fixed w-full z-50 px-4 pt-3"
       >
         <div className="max-w-6xl mx-auto">
