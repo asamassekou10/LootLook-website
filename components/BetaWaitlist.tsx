@@ -18,9 +18,7 @@ const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; dela
 export default function BetaWaitlist() {
   const [formData, setFormData] = useState({
     email: '',
-    name: '',
     collectionType: '',
-    feedbackFocus: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -43,7 +41,7 @@ export default function BetaWaitlist() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ email: '', name: '', collectionType: '', feedbackFocus: '' });
+        setFormData({ email: '', collectionType: '' });
       } else {
         setStatus('error');
         setErrorMessage(data.error || 'Something went wrong. Please try again.');
@@ -172,48 +170,28 @@ export default function BetaWaitlist() {
                       />
                     </div>
 
-                    {/* Two Column Layout for Optional Fields */}
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {/* Name - Optional */}
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-2">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          disabled={status === 'loading'}
-                          className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all disabled:opacity-50"
-                          placeholder="John Doe"
-                        />
-                      </div>
-
-                      {/* Collection Type - Optional */}
-                      <div>
-                        <label htmlFor="collectionType" className="block text-sm font-medium text-zinc-400 mb-2">
-                          What you collect
-                        </label>
-                        <select
-                          id="collectionType"
-                          name="collectionType"
-                          value={formData.collectionType}
-                          onChange={handleChange}
-                          disabled={status === 'loading'}
-                          className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all disabled:opacity-50"
-                        >
-                          <option value="" className="bg-zinc-900">Select category</option>
-                          <option value="cameras" className="bg-zinc-900">Cameras</option>
-                          <option value="sneakers" className="bg-zinc-900">Sneakers</option>
-                          <option value="cards" className="bg-zinc-900">Trading Cards</option>
-                          <option value="watches" className="bg-zinc-900">Watches</option>
-                          <option value="vinyl" className="bg-zinc-900">Vinyl</option>
-                          <option value="toys" className="bg-zinc-900">Toys</option>
-                          <option value="other" className="bg-zinc-900">Other</option>
-                        </select>
-                      </div>
+                    {/* Collection Type - Optional */}
+                    <div>
+                      <label htmlFor="collectionType" className="block text-sm font-medium text-zinc-400 mb-2">
+                        What you collect (optional)
+                      </label>
+                      <select
+                        id="collectionType"
+                        name="collectionType"
+                        value={formData.collectionType}
+                        onChange={handleChange}
+                        disabled={status === 'loading'}
+                        className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all disabled:opacity-50"
+                      >
+                        <option value="" className="bg-zinc-900">Select category</option>
+                        <option value="cameras" className="bg-zinc-900">Cameras</option>
+                        <option value="sneakers" className="bg-zinc-900">Sneakers</option>
+                        <option value="cards" className="bg-zinc-900">Trading Cards</option>
+                        <option value="watches" className="bg-zinc-900">Watches</option>
+                        <option value="vinyl" className="bg-zinc-900">Vinyl</option>
+                        <option value="toys" className="bg-zinc-900">Toys</option>
+                        <option value="other" className="bg-zinc-900">Other</option>
+                      </select>
                     </div>
 
                     {/* Error Message */}
