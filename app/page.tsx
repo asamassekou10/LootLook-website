@@ -1,10 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, X, BarChart3, ScanLine, ShieldCheck, Apple, Camera, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Menu, X, BarChart3, ScanLine, ShieldCheck, Apple, Camera, CheckCircle2, AlertCircle, Search, TrendingUp, Share2, Smartphone, Tag, Clock } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import BetaWaitlist from '@/components/BetaWaitlist';
+import HowItWorks from '@/components/HowItWorks';
+import UseCases from '@/components/UseCases';
+import WhyLootLook from '@/components/WhyLootLook';
+import FAQ from '@/components/FAQ';
 
 // --- CUSTOM STYLES FOR SHIMMER EFFECTS ---
 const customStyles = `
@@ -350,42 +354,136 @@ export default function LandingPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Feature 1 */}
             <ScrollReveal delay={0.1}>
-              <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-amber-500/50 transition-all group hover:-translate-y-2 duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-amber-400/20 to-orange-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-amber-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-amber-400/20 to-orange-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <ScanLine className="text-amber-400 w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Instant AI Scanning</h3>
-                <p className="text-zinc-400 leading-relaxed text-lg">
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Instant AI Scanning</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg mb-4">
                   Just snap a photo. Our advanced AI identifies your item, pulls historical details, and adds it to your stash in seconds.
                 </p>
+                <div className="relative h-48 rounded-xl overflow-hidden border border-white/5">
+                  <Image
+                    src="/Lootlook App Store 1.png"
+                    alt="AI Scanning Demo"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </ScrollReveal>
 
             {/* Feature 2 */}
-            <ScrollReveal delay={0.2}>
-              <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-orange-500/50 transition-all group hover:-translate-y-2 duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-400/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+            <ScrollReveal delay={0.15}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-orange-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-orange-400/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <BarChart3 className="text-orange-400 w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Portfolio Tracking</h3>
-                <p className="text-zinc-400 leading-relaxed text-lg">
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Portfolio Tracking</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg mb-4">
                   Watch your collection's value grow. Get real-time analytics on your total stash value and individual item market trends.
                 </p>
+                <div className="relative h-48 rounded-xl overflow-hidden border border-white/5">
+                  <Image
+                    src="/Lootlook App Store 2.png"
+                    alt="Portfolio Analytics"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </ScrollReveal>
 
             {/* Feature 3 */}
-            <ScrollReveal delay={0.3}>
-              <div className="h-full p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-yellow-500/50 transition-all group hover:-translate-y-2 duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-yellow-400/20 to-amber-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+            <ScrollReveal delay={0.2}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-yellow-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-yellow-400/20 to-amber-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <ShieldCheck className="text-yellow-400 w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Secure Cloud Stash</h3>
-                <p className="text-zinc-400 leading-relaxed text-lg">
-                  Your data is synced and backed up bank-grade security. Access your collection from any device, anytime.
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Secure Cloud Sync</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Your data is synced and backed up with bank-grade security. Access your collection from any device, anytime.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 4 - NEW */}
+            <ScrollReveal delay={0.25}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-blue-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-400/20 to-cyan-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Search className="text-blue-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Smart Search & Filter</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Find any item instantly with powerful search. Filter by category, value, condition, or custom tags to organize your collection.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 5 - NEW */}
+            <ScrollReveal delay={0.3}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-green-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="text-green-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Price History Tracking</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Track market values over time with interactive charts. Know when to sell and make data-driven decisions about your collection.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 6 - NEW */}
+            <ScrollReveal delay={0.35}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-purple-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Share2 className="text-purple-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Export & Share</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Share your collection with others or export to CSV. Perfect for insurance claims, appraisals, or showing off your finds.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 7 - NEW */}
+            <ScrollReveal delay={0.4}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-400/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="text-indigo-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Multi-Device Sync</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Seamlessly access your collection across iPhone, iPad, and web. Your data stays in sync in real-time across all devices.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 8 - NEW */}
+            <ScrollReveal delay={0.45}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-rose-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-rose-400/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Tag className="text-rose-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Custom Tags & Categories</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Organize your way with unlimited custom tags and categories. Create collections within collections for ultimate flexibility.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Feature 9 - NEW */}
+            <ScrollReveal delay={0.5}>
+              <div className="h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-cyan-500/50 transition-all group hover:-translate-y-2 duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-cyan-400/20 to-teal-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Clock className="text-cyan-400 w-7 h-7" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mb-3 text-white">Timeline & History</h3>
+                <p className="text-zinc-400 leading-relaxed text-base lg:text-lg">
+                  Track when you acquired each item, see your collection's growth over time, and never forget the story behind your finds.
                 </p>
               </div>
             </ScrollReveal>
@@ -393,39 +491,17 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* --- CTA SECTION --- */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <ScrollReveal>
-            <div className="relative rounded-[3rem] p-12 md:p-24 text-center overflow-hidden group">
-              {/* Animated Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-900 via-amber-800 to-orange-900 opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.3),transparent_70%)] animate-pulse-slow"></div>
-              
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-white drop-shadow-lg">Ready to unlock your stash?</h2>
-                <p className="text-amber-100 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-                  Join thousands of collectors who trust LootLook to manage their inventory. Start scanning today.
-                </p>
-                <div className="flex flex-col justify-center items-center gap-4">
-                   <motion.a
-                    href="#beta-waitlist"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center gap-3 bg-white text-black px-10 py-5 rounded-xl font-bold shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_50px_rgba(251,191,36,0.6)] transition-shadow min-w-[200px]"
-                   >
-                     <Apple className="w-7 h-7" />
-                     <span className="text-xl">Join Beta Waitlist</span>
-                   </motion.a>
-                   <span className="text-amber-200/50 text-sm font-medium flex items-center gap-2">
-                     <AlertCircle className="w-4 h-4" /> Android version coming soon
-                   </span>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* --- HOW IT WORKS SECTION --- */}
+      <HowItWorks />
+
+      {/* --- USE CASES SECTION --- */}
+      <UseCases />
+
+      {/* --- WHY LOOTLOOK SECTION --- */}
+      <WhyLootLook />
+
+      {/* --- FAQ SECTION --- */}
+      <FAQ />
 
       {/* --- FOOTER --- */}
       <footer className="bg-zinc-950 border-t border-white/10 pt-20 pb-10 relative z-10">
