@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Menu, X, BarChart3, ScanLine, ShieldCheck, Apple, Camera, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import BetaWaitlist from '@/components/BetaWaitlist';
 
 // --- CUSTOM STYLES FOR SHIMMER EFFECTS ---
 const customStyles = `
@@ -157,13 +158,16 @@ export default function LandingPage() {
                     Features
                     <span className="absolute -bottom-3 left-1/2 w-1 h-1 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-1/2"></span>
                   </a>
-                  <motion.button 
+                  <motion.a
+                    href="https://testflight.apple.com/join/BFV58W4E"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, backgroundColor: "#fbbf24" }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-white text-black px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)]"
                   >
-                    Download Now
-                  </motion.button>
+                    Join Beta
+                  </motion.a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -185,7 +189,7 @@ export default function LandingPage() {
                   >
                     <div className="px-2 pb-4 space-y-2">
                       <a href="#features" className="block px-3 py-3 text-base font-medium text-gray-300 hover:text-amber-400 hover:bg-white/5 rounded-md">Features</a>
-                      <button className="w-full mt-4 bg-gradient-to-r from-amber-500 to-orange-500 text-black px-5 py-3 rounded-lg font-bold shadow-lg">Download App</button>
+                      <a href="https://testflight.apple.com/join/BFV58W4E" target="_blank" rel="noopener noreferrer" className="w-full mt-4 bg-gradient-to-r from-amber-500 to-orange-500 text-black px-5 py-3 rounded-lg font-bold shadow-lg block text-center">Join TestFlight Beta</a>
                     </div>
                   </motion.div>
                 )}
@@ -230,14 +234,17 @@ export default function LandingPage() {
             
             {/* --- HERO BUTTON --- */}
             <motion.div variants={itemVariants} className="flex flex-col lg:flex-row items-center gap-4 justify-center lg:justify-start">
-                <motion.button 
+                <motion.a
+                    href="https://testflight.apple.com/join/BFV58W4E"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-bold shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_50px_rgba(251,191,36,0.6)] transition-shadow whitespace-nowrap border-2 border-white"
                 >
                     <Apple className="w-6 h-6" />
-                    <span className="text-lg">Download for iOS</span>
-                </motion.button>
+                    <span className="text-lg">Join TestFlight Beta</span>
+                </motion.a>
                 <div className="text-zinc-500 text-xs flex items-center gap-2">
                     <AlertCircle className="w-3 h-3" /> Android version coming later
         </div>
@@ -388,6 +395,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* --- BETA WAITLIST SECTION --- */}
+      <BetaWaitlist />
+
       {/* --- CTA SECTION --- */}
       <section className="py-32 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -403,14 +413,17 @@ export default function LandingPage() {
                   Join thousands of collectors who trust LootLook to manage their inventory. Start scanning today.
                 </p>
                 <div className="flex flex-col justify-center items-center gap-4">
-                   <motion.button 
+                   <motion.a
+                    href="https://testflight.apple.com/join/BFV58W4E"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center justify-center gap-3 bg-white text-black px-10 py-5 rounded-xl font-bold shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_50px_rgba(251,191,36,0.6)] transition-shadow min-w-[200px]"
                    >
                      <Apple className="w-7 h-7" />
-                     <span className="text-xl">Download for iOS</span>
-                   </motion.button>
+                     <span className="text-xl">Join TestFlight Beta</span>
+                   </motion.a>
                    <span className="text-amber-200/50 text-sm font-medium flex items-center gap-2">
                      <AlertCircle className="w-4 h-4" /> Android version coming soon
                    </span>
