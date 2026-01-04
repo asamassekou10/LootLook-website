@@ -337,6 +337,8 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* --- BETA WAITLIST SECTION --- */}
+      <BetaWaitlist />
 
       {/* --- FEATURES GRID (Scroll Revealed) --- */}
       <section id="features" className="py-32 bg-zinc-950 relative z-20">
@@ -390,9 +392,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* --- BETA WAITLIST SECTION --- */}
-      <BetaWaitlist />
 
       {/* --- CTA SECTION --- */}
       <section className="py-32 relative overflow-hidden">
