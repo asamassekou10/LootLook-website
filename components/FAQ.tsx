@@ -21,32 +21,32 @@ const faqs = [
     answer: "Yes! We're currently in beta, and all beta testers get free lifetime access to premium features. Once we launch publicly, early adopters will keep their premium access as a thank you for helping us improve.",
   },
   {
-    question: "What types of collections can I track?",
-    answer: "LootLook works with virtually any physical collection - cameras, sneakers, trading cards, watches, vinyl records, toys, comics, art, and more. Our AI is trained on millions of items across dozens of categories.",
+    question: "What types of items can I price?",
+    answer: "LootLook works with virtually anything - electronics, furniture, collectibles, cameras, sneakers, tools, antiques, trading cards, watches, vinyl records, toys, and more. Our AI is trained on millions of items across dozens of categories.",
   },
   {
-    question: "How accurate is the AI identification?",
-    answer: "Our AI achieves 95%+ accuracy on most popular collectibles. For rare or custom items, you can always manually edit details. The more you use LootLook, the smarter it gets at recognizing your specific collection niche.",
+    question: "How accurate is the AI pricing?",
+    answer: "Our AI achieves 95%+ accuracy on most popular items by analyzing current market data, sold listings, and condition factors. For rare or custom items, you can always manually edit details. The more you use LootLook, the smarter it gets.",
   },
   {
     question: "Is my data secure and private?",
-    answer: "Absolutely. Your collection data is encrypted end-to-end and stored with bank-grade security. We never share or sell your data. You own your collection information and can export or delete it anytime.",
+    answer: "Absolutely. Your inventory data is encrypted end-to-end and stored with bank-grade security. We never share or sell your data. You own your information and can export or delete it anytime.",
   },
   {
-    question: "Can I access my collection offline?",
-    answer: "Yes! LootLook works offline for viewing and browsing your collection. When you're back online, any changes sync automatically across all your devices.",
+    question: "Can I use it offline?",
+    answer: "Yes! LootLook works offline for viewing and browsing your items. When you're back online, any changes sync automatically across all your devices.",
   },
   {
-    question: "When will Android be available?",
-    answer: "We're focused on perfecting the iOS experience first, but Android is on our roadmap. Join the beta waitlist to be notified when we expand to Android!",
+    question: "Do I need to be a collector to use this?",
+    answer: "Not at all! LootLook is perfect for anyone who needs to price items - garage sales, decluttering, insurance documentation, reselling, or just curiosity. Whether you have 5 items or 500, we make pricing fast and easy.",
   },
   {
     question: "How does the TestFlight beta work?",
     answer: "TestFlight is Apple's official beta testing platform. Once you join our waitlist, you'll receive an email with a TestFlight link. Tap it on your iPhone or iPad to install LootLook and start testing. It's that simple!",
   },
   {
-    question: "Can I export my collection data?",
-    answer: "Yes! Export your entire collection to CSV format anytime. Perfect for insurance documentation, appraisals, or just keeping a backup on your computer.",
+    question: "Can I export my data?",
+    answer: "Yes! Export your entire inventory to CSV format anytime. Perfect for insurance documentation, tax records, appraisals, or just keeping a backup on your computer.",
   },
 ];
 

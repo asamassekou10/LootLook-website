@@ -81,7 +81,7 @@ export default function WhyLootLook() {
               </span>
             </h2>
             <p className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Spreadsheets are for accounting. LootLook is purpose-built for collectors who want speed, accuracy, and insights.
+              Spreadsheets are for accounting. LootLook is purpose-built for anyone who needs fast, accurate pricing without the hassle.
             </p>
           </div>
         </ScrollReveal>
@@ -161,10 +161,10 @@ export default function WhyLootLook() {
             <div className="mt-8 pt-8 border-t border-white/10">
               <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 text-center">
                 <p className="text-amber-400 font-bold text-lg mb-2">
-                  🚀 Built for speed. Powered by AI. Made for collectors.
+                  🚀 Built for speed. Powered by AI. Made for everyone.
                 </p>
                 <p className="text-zinc-400 text-sm">
-                  Stop wasting hours on manual data entry. Start tracking smarter in seconds.
+                  Stop wasting hours on research and guesswork. Get instant, accurate prices in seconds.
                 </p>
               </div>
             </div>

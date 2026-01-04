@@ -224,14 +224,14 @@ export default function LandingPage() {
             className="text-center lg:text-left z-20 flex flex-col justify-center lg:pl-8 xl:pl-12" 
           >
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white drop-shadow-2xl">
-              Turn your collection into <br />
+              Know what your stuff is <br />
               <span className="relative whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#FFD700] bg-[length:200%_auto] animate-shimmer">
-                legendary loot.
+                really worth.
               </span>
             </motion.h1>
-            
+
             <motion.p variants={itemVariants} className="text-lg text-zinc-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Stop hoarding. Start tracking. The ultimate AI-powered inventory for collectors looking to level up their stash.
+              Snap a photo, get instant value. Perfect for garage sales, decluttering, insurance, or building your collection. AI-powered pricing in seconds.
             </motion.p>
             
             {/* --- HERO BUTTON --- */}
@@ -349,8 +349,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Built for serious collectors.</h2>
-              <p className="text-zinc-400 max-w-2xl mx-auto text-lg">Stop using spreadsheets. LootLook brings the power of AI and real-time market data to your pocket.</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Everything you need to value your stuff.</h2>
+              <p className="text-zinc-400 max-w-2xl mx-auto text-lg">Whether you're selling at a garage sale, tracking a collection, or just curious - LootLook makes pricing effortless.</p>
             </div>
           </ScrollReveal>
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Footprints, CreditCard, Watch, Disc, Box } from 'lucide-react';
+import { Camera, Footprints, CreditCard, Watch, Disc, Box, Home, DollarSign, FileText } from 'lucide-react';
 
 const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
@@ -17,57 +17,57 @@ const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; dela
 
 const useCases = [
   {
-    id: "cameras",
+    id: "garage-sales",
+    icon: Home,
+    title: "Garage Sales & Resellers",
+    description: "Price items instantly for quick sales and maximize profits",
+    stats: { items: "100+", value: "$5K", growth: "Fast turnover" },
+    features: ["Quick valuation", "Price comparison", "Profit margins", "Batch scanning"],
+    gradient: "from-green-500 to-emerald-500",
+  },
+  {
+    id: "decluttering",
+    icon: DollarSign,
+    title: "Decluttering & Downsizing",
+    description: "Know what to sell, donate, or keep based on real value",
+    stats: { items: "200+", value: "$8K", growth: "Smart decisions" },
+    features: ["Market values", "Sell vs donate", "Quick sorting", "Organize by value"],
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: "insurance",
+    icon: FileText,
+    title: "Insurance & Documentation",
+    description: "Create detailed inventories for insurance claims and records",
+    stats: { items: "150+", value: "$25K", growth: "Peace of mind" },
+    features: ["Photo documentation", "Value proof", "Export reports", "Claim support"],
+    gradient: "from-purple-500 to-indigo-500",
+  },
+  {
+    id: "collectors",
     icon: Camera,
-    title: "Camera Collectors",
-    description: "Track vintage film cameras, lenses, and rare equipment",
+    title: "Collectors & Hobbyists",
+    description: "Track vintage items, rare finds, and growing collections",
     stats: { items: "250+", value: "$45K", growth: "+15%" },
-    features: ["Model recognition", "Lens compatibility", "Serial numbers", "Market trends"],
+    features: ["Collection growth", "Market trends", "Rarity tracking", "Portfolio value"],
     gradient: "from-amber-500 to-orange-500",
   },
   {
     id: "sneakers",
     icon: Footprints,
-    title: "Sneakerheads",
-    description: "Manage your sneaker portfolio with AI-powered authentication",
-    stats: { items: "180+", value: "$32K", growth: "+22%" },
-    features: ["Colorway detection", "Size tracking", "Resale values", "Release dates"],
+    title: "Sneaker Enthusiasts",
+    description: "Manage sneakers with AI authentication and resale tracking",
+    stats: { items: "80+", value: "$15K", growth: "+22%" },
+    features: ["Colorway ID", "Resale values", "Size tracking", "Market demand"],
     gradient: "from-red-500 to-pink-500",
-  },
-  {
-    id: "cards",
-    icon: CreditCard,
-    title: "Trading Cards",
-    description: "Catalog sports cards, Pokémon, and collectible card games",
-    stats: { items: "500+", value: "$28K", growth: "+18%" },
-    features: ["Card condition", "PSA grades", "Player stats", "Rarity tracking"],
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    id: "watches",
-    icon: Watch,
-    title: "Watch Collectors",
-    description: "Premium timepiece tracking with serial authentication",
-    stats: { items: "45+", value: "$125K", growth: "+8%" },
-    features: ["Brand verification", "Movement types", "Service history", "Value appreciation"],
-    gradient: "from-purple-500 to-indigo-500",
-  },
-  {
-    id: "vinyl",
-    icon: Disc,
-    title: "Vinyl Collectors",
-    description: "Organize records, track pressings, and monitor value",
-    stats: { items: "400+", value: "$18K", growth: "+12%" },
-    features: ["Pressing details", "Condition grades", "Label variants", "Price history"],
-    gradient: "from-green-500 to-emerald-500",
   },
   {
     id: "general",
     icon: Box,
-    title: "Anything Else",
-    description: "Comics, toys, art, memorabilia - track any collection",
-    stats: { items: "300+", value: "$22K", growth: "+10%" },
-    features: ["Custom categories", "Flexible tagging", "Multi-type support", "Universal tracking"],
+    title: "Anything & Everything",
+    description: "Electronics, furniture, tools, antiques - value anything",
+    stats: { items: "300+", value: "$12K", growth: "Universal" },
+    features: ["Any category", "Custom tags", "Flexible use", "Multi-purpose"],
     gradient: "from-orange-500 to-amber-500",
   },
 ];
@@ -92,10 +92,10 @@ export default function UseCases() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
-              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">every</span> collector.
+              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">everyone.</span>
             </h2>
             <p className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Whether you collect cameras, sneakers, or vintage toys - LootLook adapts to your passion.
+              Selling at a garage sale? Decluttering your home? Building a collection? Managing insurance? LootLook works for you.
             </p>
           </div>
         </ScrollReveal>
@@ -208,7 +208,7 @@ export default function UseCases() {
         <ScrollReveal delay={0.4}>
           <div className="text-center mt-12">
             <p className="text-zinc-500 text-sm mb-4">
-              No matter what you collect, we've got you covered.
+              No matter what you're pricing, we've got you covered.
             </p>
             <motion.a
               href="#beta-waitlist"
@@ -216,7 +216,7 @@ export default function UseCases() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold transition-colors"
             >
-              Start tracking your collection
+              Start valuing your stuff
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
