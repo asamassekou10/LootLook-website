@@ -61,10 +61,8 @@ export default function BetaWaitlist() {
     });
   };
 
-  const TESTFLIGHT_URL = 'https://testflight.apple.com/join/BFV58W4E';
-
   return (
-    <section className="py-32 relative overflow-hidden bg-zinc-950">
+    <section id="beta-waitlist" className="py-32 relative overflow-hidden bg-zinc-950">
       {/* Background Gradient */}
       <motion.div
         animate={{ opacity: [0.2, 0.4, 0.2] }}
@@ -95,25 +93,14 @@ export default function BetaWaitlist() {
               Be among the first to test LootLook
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-              Our iOS beta is live on TestFlight! Join early testers, help shape the future of collection management,
-              and get exclusive access to new features before anyone else.
+              Our iOS beta is live on TestFlight! Join the waitlist below to receive your exclusive TestFlight invitation link via email.
+              Help shape the future of collection management and get early access to new features.
             </p>
 
-            {/* TestFlight CTA Button */}
-            <motion.a
-              href={TESTFLIGHT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 text-black px-8 py-4 rounded-xl font-bold shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:shadow-[0_0_50px_rgba(251,191,36,0.6)] transition-shadow mb-6"
-            >
-              <TestTube2 className="w-6 h-6" />
-              <span className="text-lg">Join TestFlight Beta Now</span>
-            </motion.a>
-
-            <p className="text-zinc-500 text-sm mb-12">
-              Limited spots available · iOS 15.0 or later required
+            <p className="text-amber-400 text-sm mb-12 flex items-center justify-center gap-2">
+              <Sparkles className="w-4 h-4" />
+              Limited spots available · TestFlight link sent instantly to your email
+              <Sparkles className="w-4 h-4" />
             </p>
           </div>
         </ScrollReveal>
@@ -123,9 +110,9 @@ export default function BetaWaitlist() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-3">Join the Waitlist</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">Get Your TestFlight Invite</h3>
                 <p className="text-zinc-400">
-                  Want updates on new features and be notified when we have more beta slots? Sign up below!
+                  Fill out the form below and we'll send your exclusive TestFlight invitation link directly to your inbox!
                 </p>
               </div>
 
@@ -138,9 +125,12 @@ export default function BetaWaitlist() {
                   <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle2 className="w-8 h-8 text-green-400" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">You're on the list!</h4>
-                  <p className="text-zinc-400">
-                    Check your email for confirmation and next steps. We'll keep you updated on the beta program.
+                  <h4 className="text-xl font-bold text-white mb-2">Check your email!</h4>
+                  <p className="text-zinc-400 mb-4">
+                    We've sent your TestFlight invitation link to your inbox. Click the link in the email to start testing LootLook!
+                  </p>
+                  <p className="text-zinc-500 text-sm">
+                    Don't see it? Check your spam folder or contact us at hello@lootlook.app
                   </p>
                 </motion.div>
               ) : (
@@ -256,13 +246,13 @@ export default function BetaWaitlist() {
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>Join Waitlist</span>
+                        <span>Get My TestFlight Invite</span>
                       </>
                     )}
                   </motion.button>
 
                   <p className="text-center text-zinc-500 text-xs mt-4">
-                    By signing up, you agree to receive updates about LootLook beta program.
+                    By signing up, you'll receive your TestFlight invite and updates about the LootLook beta program.
                   </p>
                 </form>
               )}
